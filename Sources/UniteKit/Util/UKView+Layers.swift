@@ -18,9 +18,11 @@ public extension NSView {
 
 public extension UKView {
   func debugLayerInfo() {
+    debugPrint("layer? = \(layer != nil)")
     debugPrint("wantsLayer = \(wantsLayer)")
     debugPrint("wantsUpdateLayer = \(wantsUpdateLayer)")
     debugPrint("isFlipped = \(isFlipped)")
+    debugPrint("canDrawSubviewsIntoLayer= \(canDrawSubviewsIntoLayer)")
     debugPrint("layerContentsRedrawPolicy = \(myLayerContentsRedrawPolicy.toString())")
     debugPrint("\(myLayerContentsRedrawPolicy.explanation())")
   }

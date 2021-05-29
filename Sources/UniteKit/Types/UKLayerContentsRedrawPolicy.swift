@@ -64,3 +64,17 @@ public extension UKLayerContentsRedrawPolicy {
     }
   }
 }
+
+
+/**
+ 
+ 1. No Layer
+ - .never
+ 
+ 2. Layer-Hosted
+ - .never
+ 
+ 3. Layer-Backed
+ - .duringViewResize
+ 
+ */

@@ -51,17 +51,6 @@ open class UKView: ViewType {
     }
   }
   
-//  #if os(OSX)
-//  // set geometry like UIView
-//  open override var isFlipped: Bool {
-//    return true
-//  }
-//
-//  open override var wantsUpdateLayer : Bool {
-//    return true
-//  }
-//  #endif
-  
   #if os(macOS)
   open var userInteractionEnabled: Bool {
     return true
@@ -108,6 +97,11 @@ open class UKView: ViewType {
   open var isFlipped: Bool {
     set { }
     get { return true }
+  }
+  
+  open var canDrawSubviewsIntoLayer: Bool {
+    set { }
+    get { return false }
   }
   
   public var myLayerContentsRedrawPolicy: UKLayerContentsRedrawPolicy {

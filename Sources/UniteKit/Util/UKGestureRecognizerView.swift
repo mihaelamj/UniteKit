@@ -17,7 +17,7 @@ open class UKGestureRecognizerView: UKCustomView {
   var isOn: Bool = false
   
   override open var viewOptions: UKViewOptions {
-    return .likeUIKit
+    return .uiKitDefault
   }
   
   // MARK: -

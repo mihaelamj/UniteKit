@@ -29,6 +29,9 @@ open class UKCustomView: UKView {
   }
   
   open override var wantsUpdateLayer : Bool {
+    if viewOptions.contains(.canDrawSubviewsIntoLayer) {
+      return false
+    }
     return viewOptions.contains(.wantsUpdateLayer)
   }
   #endif
@@ -63,8 +66,10 @@ private extension UKCustomView {
     #if os(OSX)
     wantsLayer = viewOptions.contains(.wantsLayer)
     canDrawSubviewsIntoLayer = viewOptions.contains(.canDrawSubviewsIntoLayer)
-    if viewOptions.contains(.contentsRedrawPolicyIsOnSetNeedsDisplay) {
+    if viewOptions.contains(.redrawOnSetNeedsDisplay) {
       layerContentsRedrawPolicy = .onSetNeedsDisplay
+    } else if viewOptions.contains(.redrawDuringViewResize) {
+      layerContentsRedrawPolicy = .duringViewResize
     }
     #endif
     debugLayerInfo()
